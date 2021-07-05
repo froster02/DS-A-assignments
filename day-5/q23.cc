@@ -25,7 +25,11 @@ void islandPerimeter(vector<vector<int>>& grid) {
 
 int main(){
 
-    vector<vector<int> > v{{0,1,0,0},{1,1,1,0},{0,1,0,0},{1,1,0,0}};
+    vector<vector<int> > v{ {0,1,0,0},
+                            {1,1,1,0},
+                            {0,1,0,0},
+                            {1,1,0,0}
+                        };
     islandPerimeter(v);
     
     return 0;
