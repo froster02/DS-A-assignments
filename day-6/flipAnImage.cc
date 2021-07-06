@@ -2,10 +2,10 @@
 #include <vector>
 using namespace std;
 
-void flipAndInvertImage(vector<vector<int>>& image) {
+void flipAndInvertImage(vector<vector<int> >& image) {
     int n = image.size();
     int m = image[0].size();
-    vector<vector<int>> ans(n, vector<int>(m, 0));
+    vector<vector<int> > ans(n, vector<int>(m, 0));
     for(int i = 0; i < n; i++){
         for(int j = 0, k = (m-1); j < m, k >= 0; j++, k--){
             if(image[i][k])
@@ -23,7 +23,7 @@ void flipAndInvertImage(vector<vector<int>>& image) {
 }
 
 int main(){
-    vector<vector<int> > v {{1,1,0}, 
+    vector<vector<int> > v  {{1,1,0}, 
                             {1,0,1}, 
                             {0,0,0}};
     flipAndInvertImage(v);
