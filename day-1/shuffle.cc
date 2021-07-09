@@ -24,6 +24,6 @@ int main(){
         nums.push_back(ele);
     }
 
-    cout << removeDuplicates(nums);
+    cout << shuffle(nums);
     return 0;
 }
