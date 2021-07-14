@@ -1,24 +1,40 @@
 #include <iostream>
+#include <string>
+#include <algorithm>
 #include <math.h>
 using namespace std;
 
 int main() {
-    int n, x;
-    string s;
-    char c = '.';
-    cin >> s >> n;
-    x = s.find(c);
-    float ans = 0,i = 0;
-    while(i < x){
-        int t = pow(n, x - i - 1);
-        ans = ans + t * (s[i] - '0');
-        i++;
+    
+    string str;
+    int n;
+    cin >> str >> n;
+    int size = str.size(), j = 0;
+    string s1, s2;
+    for(int i = 0; i < size; i++){
+        if(str[i] != '.') {
+            s1.push_back(str[i]);
+            j++;
+        }
+        else if(str[i] == '.')
+            break;
     }
-    x++, i++;
-    int k = -1;
-    while(x < s.size()){
-        ans += pow(n, k) * (s[i] - '0');
-        i++, x++, k--;    
-    }
-    cout << ans;
+
+    for(int i = j; i < size; i++)
+        if(str[i] != '.')
+            s2.push_back(str[i]);
+
+    reverse(s1.begin(), s1.end());
+
+    double sum = 0.0;
+
+    for(int i = 0, exp = 0; i < s1.size(); i++, exp++)
+        sum += (s1[i] - '0') * pow(n, exp);
+
+    for(int i = 0, exp = -1; i < s2.size(); i++, exp--)
+        sum += (s2[i] - '0') * pow(n, exp);
+
+    cout << sum << endl;
+
+    return 0;
 } 
