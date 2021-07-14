@@ -1,6 +1,4 @@
 #include <iostream>
-#include <string>
-#include <algorithm>
 #include <math.h>
 using namespace std;
 
@@ -24,11 +22,9 @@ int main() {
         if(str[i] != '.')
             s2.push_back(str[i]);
 
-    reverse(s1.begin(), s1.end());
-
     double sum = 0.0;
 
-    for(int i = 0, exp = 0; i < s1.size(); i++, exp++)
+    for(int i = s1.size() - 1, exp = 0; i >= 0; i--, exp++)
         sum += (s1[i] - '0') * pow(n, exp);
 
     for(int i = 0, exp = -1; i < s2.size(); i++, exp--)
